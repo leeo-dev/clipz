@@ -1,4 +1,6 @@
-# Clips
+# Clipz
+
+Get ready to take your gaming experience to the next level with our amazing app! It's the ultimate platform for gamers to capture, clip, and share their epic gaming moments with the world. With our cutting-edge tools, you can effortlessly create and share jaw-dropping gaming videos that will blow everyone's minds! Plus, it's so simple to use, you'll be sharing your awesome clips in no time. Whether you're a hardcore gamer or a casual player, our app is the must-have tool to showcase your skills and impress your friends. Don't wait any longer, download our app now and become a gaming superstar!
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
