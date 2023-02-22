@@ -5,28 +5,34 @@ import { IModal } from '../interface/modal.interface';
   providedIn: 'root',
 })
 export class ModalService {
-  private modals: IModal[] = [];
+  private modals: Map<string, IModal> = new Map();
+  private registeredIds: Set<string> = new Set();
 
   register(id: string): void {
-    this.modals.push({ id, visible: false });
+    if (!this.registeredIds.has(id)) {
+      this.modals.set(id, { id, visible: false });
+      this.registeredIds.add(id);
+    }
   }
 
   unregister(id: string): void {
-    this.modals = this.modals.filter((modal) => modal.id !== id);
+    this.modals.delete(id);
+    this.registeredIds.delete(id);
   }
 
   isModalOpen(id: string): boolean {
-    return !!this.find(id)?.visible;
+    const modal = this.modals.get(id);
+    return !!modal && modal.visible;
   }
 
   closeModal(id: string): void {
-    const modal = this.find(id);
+    const modal = this.modals.get(id);
     if (modal) {
-      modal.visible = !modal.visible;
+      modal.visible = false;
     }
   }
 
   find(id: string): IModal | undefined {
-    return this.modals.find((modal) => modal.id === id);
+    return this.modals.get(id);
   }
 }
