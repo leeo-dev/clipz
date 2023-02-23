@@ -32,6 +32,13 @@ export class ModalService {
     }
   }
 
+  openModal(id: string): void {
+    const modal = this.modals.get(id);
+    if (modal) {
+      modal.visible = true;
+    }
+  }
+
   find(id: string): IModal | undefined {
     return this.modals.get(id);
   }
