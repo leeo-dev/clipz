@@ -1,0 +1,11 @@
+<input [type]="type" [placeholder]="placeholder" [formControl]='control' class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
+duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400" />
+<div class="container" *ngIf="control.touched && control.dirty">
+  <p class='text-red-500' *ngIf="requiredError">Field is required</p>
+  <p class='text-red-500' *ngIf="minLengthError">The value you inputted is {{actualLength}} characters long.</p>
+  <p class='text-red-500' *ngIf="emailError"> You must enter a valid email.</p>
+  <p class='text-red-500' *ngIf="minError">Value too low.</p>
+  <p class='text-red-500' *ngIf="maxError">Value to high.</p>
+  <p class='text-red-500' *ngIf="patternError">Password at least 8 characters long, have 1 uppercase letter, 1 lowercase
+    letter and 1 number.</p>
+</div>
